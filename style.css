@@ -217,7 +217,7 @@ body {
 }
 
 .task-box {
-    background-color: rgb(185, 42, 173);
+    background-color: rgb(68, 51, 95);
     color: white;
     text-decoration: none;
     padding: 30px;
@@ -228,6 +228,16 @@ body {
 }
 
 .task-box:hover {
-    background-color: rgb(233, 179, 212);
+    background-color: #0d7b8f;
     transform: scale(1.05);
+}
+
+/* Template Section  */
+h2 {
+    margin-top: 40px;
+}
+
+
+.template-box {
+    background-color: #2c3e50;
 }
