@@ -370,13 +370,13 @@ body {
 .message {
     background: #1e293b;
     color: white;
-    cursor=pointer;
+    cursor:pointer;
 }
 
 .follow {
     background: white;
     color: black;
-    cursor=pointer;
+    cursor:pointer;
 }
 .profile-pic {
     width: 80px;     
