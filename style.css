@@ -321,15 +321,12 @@ body {
     overflow-y: scroll; 
 
 }
-.content{
+.content {
     background-color: lightblue;
     padding: 20px;
     margin-top: 20px;
-    
-}
-.content::-webkit-scrollbar-thumb {
-    background: #444;
-    border-radius: 6px;
+    height: 200px;        
+    overflow-y: scroll;  
 }
 
 /* Template Section  */
