@@ -1,0 +1,80 @@
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#1e1e1e;
+    color:white;
+}
+
+
+
+.file-manager{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    height:100vh;
+}
+
+
+
+.sidebar{
+    background:#2f3e4e;
+    padding:20px;
+}
+
+.sidebar h3{
+    font-size:14px;
+    color:#ccc;
+    margin-top:20px;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar li{
+    padding:6px 0;
+    cursor:pointer;
+}
+
+.sidebar li:hover{
+    color:#4da6ff;
+}
+
+
+
+.main{
+    padding:20px;
+}
+
+
+
+.breadcrumb{
+    margin-bottom:20px;
+    color:#ccc;
+}
+
+
+.files{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+    gap:30px;
+}
+
+
+
+.file{
+    text-align:center;
+    font-size:40px;
+    cursor:pointer;
+
+}
+
+.file p{
+    font-size:14px;
+    margin-top:8px;
+}
+
+.file:hover{
+    color:#4da6ff;
+}
+

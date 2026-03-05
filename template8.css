@@ -1,11 +1,10 @@
 body{
-    background-color: #f0f0f0;
+    background-color: #06093f;
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    
 }
 .music-card {
-    background-color: white;
+    background-color: rgb(115, 29, 196);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     padding: 20px;
@@ -15,10 +14,10 @@ body{
 }
 .music-card h2{
     margin-top: 0;
-    color: #333;
+    color: #141010;
 }
 .music-card p{
-    color: #666;
+    color: #d612ac;
 }
 .album-art{
     width: 100%;
