@@ -1,0 +1,30 @@
+body{
+background:black;
+font-family:Arial;
+padding:40px;
+}
+
+/* GRID CONTAINER */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3, 250px);
+gap:20px;
+}
+
+/* CARD */
+
+.card{
+background:linear-gradient(135deg,#4f6edb,#3f5bc9);
+color:white;
+padding:40px;
+border-radius:10px;
+text-align:center;
+transition:0.3s;
+}
+
+/* HOVER EFFECT */
+
+.card:hover{
+transform:translateY(-10px);
+}
