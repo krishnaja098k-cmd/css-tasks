@@ -1,23 +1,22 @@
 body{
     background-color: #06093f;
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     
 }
 .music-card {
     background-color: rgb(115, 29, 196);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     padding: 20px;
     margin: auto;
     width: 100%;
     max-width: 400px;
 }
-.music-card h2{
-    margin-top: 0;
-    color: #141010;
+.h2{
+   
+    color: #130a10;
 }
-.music-card p{
-    color: #d612ac;
+.music-player p{
+    color: #d32aae;
 }
 .album-art{
     width: 100%;
@@ -36,7 +35,6 @@ body{
 .music-player button{
     background-color: #6200ea;
     color: white;
-    border: none;
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;

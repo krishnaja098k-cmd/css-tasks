@@ -2,7 +2,7 @@
     background-color: pink;
     
     padding: 20px;   
-    margin: 40px;    
+    margin: 40px;    +
 }
 
 
@@ -176,7 +176,7 @@ body {
 
 .sidebar {
     width: 250px;              
-    background-color: #2c3e50;
+    background-color: #0b335c;
     color: white;
     padding: 20px;
 }
@@ -205,7 +205,7 @@ body {
 .card {
     flex: 1 1 200px;     
     background-color: royalblue;
-    color: white;
+    color: rgb(173, 163, 163);
     padding: 40px;
     text-align: center;
     border-radius: 10px;
@@ -339,3 +339,12 @@ h2 {
     background-color: #2c3e50;
 }
 
+/*bootstrap section */
+h2 {
+    margin-top: 40px;
+}
+
+
+.template-box {
+    background-color: #2c3e50;
+}

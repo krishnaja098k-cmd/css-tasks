@@ -1,5 +1,4 @@
 body{
-    margin:0;
     font-family:Arial, sans-serif;
     background:#1e1e1e;
     color:white;
@@ -49,7 +48,6 @@ body{
 .search input{
     padding:6px 10px;
     border-radius:5px;
-    border:none;
     width:200px;
 }
 
