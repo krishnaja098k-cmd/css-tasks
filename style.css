@@ -211,7 +211,7 @@ body {
     border-radius: 10px;
 }
 .task-container {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
 }
