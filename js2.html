@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Show Hide Example</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="box">
+
+<h2 id="text">JavaScript is Fun</h2>
+
+<button onclick="hideText()">Hide</button>
+<button onclick="showText()">Show</button>
+
+</div>
+
+<script>
+
+function hideText(){
+document.getElementById("text").style.display = "none";
+}
+
+function showText(){
+document.getElementById("text").style.display = "block";
+}
+
+</script>
+
+</body>
+</html>

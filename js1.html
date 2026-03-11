@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Example</title>
+<link href="js1.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="box">
+
+<h2 id="msg">Hello</h2>
+
+<button class="btn1" onclick="changeText()">Click Me</button>
+<button class="btn2" onclick="goBack()">Back</button>
+
+</div>
+
+<script>
+
+function changeText(){
+document.getElementById("msg").innerText = "Welcome to JavaScript";
+}
+
+function goBack(){
+document.getElementById("msg").innerText = "Hello";
+}
+
+</script>
+
+</body>
+</html>
