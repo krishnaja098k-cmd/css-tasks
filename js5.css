@@ -1,0 +1,13 @@
+.box{
+width:200px;
+height:100px;
+background:lightgray;
+text-align:center;
+line-height:100px;
+margin-bottom:10px;
+}
+
+.active{
+background:green;
+color:white;
+}

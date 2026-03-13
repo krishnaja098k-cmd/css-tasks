@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Details</title>
+<link rel="stylesheet" href="js6.css">
+</head>
+
+<body>
+
+<div class="card">
+<h2>User Details</h2>
+
+<p id="demo">Click the button to view details</p>
+
+<button onclick="showData()">Show Data</button>
+</div>
+
+<script>
+const user = {
+name: "John",
+age: 25,
+city: "London"
+};
+
+function showData(){
+document.getElementById("demo").innerHTML =
+"Name: " + user.name + "<br>" +
+"Age: " + user.age + "<br>" +
+"City: " + user.city;
+}
+</script>
+
+</body>
+</html>
