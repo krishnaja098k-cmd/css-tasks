@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Toggle Class</title>
-
-<link rel="stylesheet" href="js5.css">
-
+<title>Contact Form</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div id="box" class="box">Hello</div>
+<div class="card">
 
-<button onclick="toggleStyle()">Toggle Style</button>
+<h2>Contact Form</h2>
+
+<form onsubmit="return validateForm()">
+
+<input type="text" id="name" placeholder="Enter your name">
+
+<button type="submit">Submit</button>
+
+<p id="error"></p>
+
+</form>
+
+</div>
 
 <script>
-function toggleStyle(){
-document.getElementById("box").classList.toggle("active");
+function validateForm(){
+
+let name = document.getElementById("name").value;
+
+if(name === ""){
+document.getElementById("error").innerText="⚠ Please enter your name";
+return false;
+}
+
+return true;
+
 }
 </script>
 
