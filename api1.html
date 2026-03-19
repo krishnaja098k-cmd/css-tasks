@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App</title>
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #dfdfe6e7;
+    color: rgb(255, 82, 30);
+}
+
+
+header {
+    background: #2a2a40;
+    padding: 15px;
+    display: grid;
+    justify-content: flex-end;
+}
+
+.search {
+    background: transparent;
+    border: 2px solid #444;
+    padding: 10px 15px;
+    border-radius: 25px;
+    color: white;
+    outline: none;
+}
+
+.search::placeholder {
+    color: #aaa;
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 5px;
+    padding: 40px;
+}
+
+
+.movie {
+    background: #2a2a40;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    transition: transform 0.2s;
+}
+
+.movie:hover {
+    transform: scale(1.05);
+}
+
+.movie img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+
+.movie-info {
+    display: grid;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.movie-info h3 {
+    font-size: 16px;
+}
+
+.movie-info span {
+    background: #251d1d;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+.green {
+    color: lightgreen;
+}
+
+.orange {
+    color: orange;
+}
+
+.red {
+    color: red;
+}
+
+
+.overview {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    color: rgb(56, 40, 40);
+    padding: 20px;
+    max-height: 100%;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in;
+    overflow-y: auto;
+}
+
+.movie:hover .overview {
+    transform: translateY(0);
+}
+
+.overview h3 {
+    margin-bottom: 10px;
+}
+    </style>
+</head>
+
+<body>
+
+<header>
+    <form id="form">
+        <input type="text" id="search" class="search" placeholder="Search..." autocomplete="off">
+    </form>
+</header>
+
+<main id="main"></main>
+
+<script>
+    const API_URL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&page=1&api_key=37153a486788dafbb90b90b4ed4ae4a1";
+
+const SEARCH_API = "https://api.themoviedb.org/3/search/movie?api_key=37153a486788dafbb90b90b4ed4ae4a1&query=";
+
+const IMG_PATH = "https://image.tmdb.org/t/p/w500";
+
+const main = document.getElementById("main");
+const form = document.getElementById("form");
+const search = document.getElementById("search");
+
+
+getMovies(API_URL);
+
+async function getMovies(url) {
+    const res = await fetch(url);
+    const data = await res.json();
+    showMovies(data.results);
+}
+
+function showMovies(movies) {
+    main.innerHTML = "";
+
+    movies.forEach(movie => {
+        const { title, poster_path, vote_average, overview } = movie;
+
+        const movieEl = document.createElement("div");
+        movieEl.classList.add("movie");
+
+        movieEl.innerHTML = `
+            <img src="${IMG_PATH + poster_path}" alt="${title}">
+            <div class="movie-info">
+                <h3>${title}</h3>
+                <span class="${getColor(vote_average)}">${vote_average}</span>
+            </div>
+            <div class="overview">
+                <h3>Overview</h3>
+                ${overview}
+            </div>
+        `;
+
+        main.appendChild(movieEl);
+    });
+}
+
+
+function getColor(vote) {
+    if (vote >= 7) return "green";
+    else if (vote >= 5) return "orange";
+    else return "red";
+}
+
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const searchTerm = search.value;
+
+    if (searchTerm) {
+        getMovies(SEARCH_API + searchTerm);
+    } else {
+        getMovies(API_URL);
+    }
+});
+</script>
+
+</body>
+</html>
