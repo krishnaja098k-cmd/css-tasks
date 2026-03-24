@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drag and Drop</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        #dragItem {
+            width: 120px;
+            height: 50px;
+            background: orange;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            cursor: grab;
+        }
+
+        #dropZone {
+            width: 200px;
+            height: 150px;
+            border: 2px dashed black;
+            margin: 20px auto;
+
+            /* FIX: center content properly */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Drag and Drop Example</h2>
+
+<div id="dragItem" draggable="true">Drag Me</div>
+
+<div id="dropZone">Drop Here</div>
+
+<script>
+    const dragItem = document.getElementById("dragItem");
+    const dropZone = document.getElementById("dropZone");
+
+    // Drag start
+    dragItem.addEventListener("dragstart", function (e) {
+        e.dataTransfer.setData("text", e.target.id);
+    });
+
+    // Allow drop
+    dropZone.addEventListener("dragover", function (e) {
+        e.preventDefault();
+    });
+
+    // Highlight when dragging over
+    dropZone.addEventListener("dragenter", function () {
+        dropZone.style.background = "lightgreen";
+    });
+
+    dropZone.addEventListener("dragleave", function () {
+        dropZone.style.background = "";
+    });
+
+    // Drop
+    dropZone.addEventListener("drop", function (e) {
+        e.preventDefault();
+
+        const data = e.dataTransfer.getData("text");
+        const draggedElement = document.getElementById(data);
+
+        dropZone.innerHTML = ""; // remove "Drop Here"
+        dropZone.appendChild(draggedElement);
+
+        dropZone.style.background = "lightgreen";
+    });
+</script>
+
+</body>
+</html>
