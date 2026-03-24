@@ -13,7 +13,7 @@
             margin-bottom: 20px;
         }
 
-        #dragItem {
+ #dragItem {
             width: 120px;
             height: 50px;
             background: orange;
@@ -25,13 +25,12 @@
             cursor: grab;
         }
 
-        #dropZone {
+ #dropZone {
             width: 200px;
             height: 150px;
             border: 2px dashed black;
             margin: 20px auto;
 
-            /* FIX: center content properly */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -48,21 +47,21 @@
 <div id="dropZone">Drop Here</div>
 
 <script>
-    const dragItem = document.getElementById("dragItem");
-    const dropZone = document.getElementById("dropZone");
+const dragItem = document.getElementById("dragItem");
+const dropZone = document.getElementById("dropZone");
 
-    // Drag start
-    dragItem.addEventListener("dragstart", function (e) {
+   
+ dragItem.addEventListener("dragstart", function (e) {
         e.dataTransfer.setData("text", e.target.id);
     });
 
-    // Allow drop
-    dropZone.addEventListener("dragover", function (e) {
-        e.preventDefault();
+   
+dropZone.addEventListener("dragover", function (e) {
+     e.preventDefault();
     });
 
-    // Highlight when dragging over
-    dropZone.addEventListener("dragenter", function () {
+   
+ dropZone.addEventListener("dragenter", function () {
         dropZone.style.background = "lightgreen";
     });
 
@@ -70,17 +69,17 @@
         dropZone.style.background = "";
     });
 
-    // Drop
+    
     dropZone.addEventListener("drop", function (e) {
         e.preventDefault();
 
-        const data = e.dataTransfer.getData("text");
+const data = e.dataTransfer.getData("text");
         const draggedElement = document.getElementById(data);
 
-        dropZone.innerHTML = ""; // remove "Drop Here"
-        dropZone.appendChild(draggedElement);
+ dropZone.innerHTML = ""; 
+dropZone.appendChild(draggedElement);
 
-        dropZone.style.background = "lightgreen";
+ dropZone.style.background = "lightgreen";
     });
 </script>
 
