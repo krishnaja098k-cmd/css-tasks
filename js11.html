@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Filter</title>
+    <link rel="stylesheet" href="js11.css">
+</head>
+
+<body>
+
+<h2>Product Price Filter</h2>
+
+<input type="number" id="priceInput" placeholder="Enter price">
+<button onclick="filterProducts()">Filter</button>
+
+<ul id="productList"></ul>
+
+<script>
+const products = [
+    {name: "Laptop", price: 50000},
+    {name: "Phone", price: 20000},
+    {name: "Headphones", price: 2000},
+    {name: "Keyboard", price: 1500},
+    {name: "Mouse", price: 800}
+];
+
+function displayProducts(list){
+    const ul = document.getElementById("productList");
+    ul.innerHTML = "";
+
+    list.forEach(product => {
+        const li = document.createElement("li");
+        li.textContent = product.name + " - ₹" + product.price;
+        ul.appendChild(li);
+    });
+}
+
+displayProducts(products);
+
+function filterProducts(){
+    const price = document.getElementById("priceInput").value;
+
+    const filtered = products.filter(product => product.price >= price);
+
+    displayProducts(filtered);
+}
+</script>
+
+</body>
+</html>
